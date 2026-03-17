@@ -1,0 +1,230 @@
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+.services-container {
+  font-family: "Poppins", sans-serif;
+  background: #f1f5f9;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+.header {
+  padding: 80px 0;   /* FIXED (you had invalid code) */
+}
+
+.header-content {
+  width: 90%;
+  margin: auto;
+}
+
+.tag {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.main-title {
+  font-size: 55px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 10px 0;
+}
+
+.sub-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 580;   /* 👈 correct weight */
+  color: #1e293b;
+  line-height: 1.5;
+}
+.desc {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+/* ========================= */
+/* CARD */
+/* ======= */
+.card {
+  width: 90%;
+  margin: 30px auto;   /* base spacing */
+  background: #fff;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* LEFT-RIGHT */
+.card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* PER CARD SPACING (optional control) */
+.card-1 { margin-top: 0px; }
+.card-2 { margin-top: 65px; }
+.card-3 { margin-top: 65px; }
+.card-4 { margin-top: 65px; margin-bottom: 60px; }
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+.card-img {
+  width: 40%;
+  min-width: 40%;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+.card-content {
+  width: 60%;
+  min-width: 60%;
+  padding: 30px;
+}
+
+.title {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ========================= */
+/* LIST */
+/* ========================= */
+.list-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 15px;
+}
+
+.tick {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.tick svg circle,
+.tick svg path {
+  stroke: #f97316;
+  stroke-width: 2;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+.btn-dark {
+  margin-top: 20px;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-orange {
+  background: #f97316;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* CTA */
+/* ========================= */
+.cta {
+  background: linear-gradient(90deg, #0f2a4a, #2f5ea8);
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.cta h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  color: #d1d5db;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .main-title {
+    font-size: 40px;
+  }
+
+  .card,
+  .card.reverse {
+    flex-direction: column;
+  }
+
+  .card-img,
+  .card-content {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .list-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 32px;
+  }
+
+  .cta h1 {
+    font-size: 28px;
+  }
+
+  .btn-dark,
+  .btn-orange,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}

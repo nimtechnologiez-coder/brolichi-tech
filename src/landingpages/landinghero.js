@@ -26,12 +26,13 @@ const LandingHero = () => {
         </p>
 
         <div className="buttons">
-          <button className="primary">
-            Request a Quotation →
-          </button>
-          <button className="secondary">
-            What We Offer →
-          </button>
+          <a href="/quotation" className="primary">
+  Request a Quotation →
+</a>
+
+<a href="/services" className="secondary">
+  What We Offer →
+</a>
         </div>
 
         <div className="stats">

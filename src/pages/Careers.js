@@ -14,6 +14,7 @@ import {
   Facebook, 
   Twitter 
 } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const Careers = () => {
   const [expandedJobId, setExpandedJobId] = useState(null);
@@ -160,7 +161,7 @@ const Careers = () => {
                       </ul>
                     </div>
                   </div>
-                  <button className="careers-btn apply-now-btn">Apply Now for this Role</button>
+                  <a href="/apply" className="careers-btn apply-now-btn">Apply Now for this Role</a>
                 </div>
               )}
             </div>
@@ -179,18 +180,18 @@ const Careers = () => {
         </p>
 
         <div className="ctas-buttons">
-          <button className="ctas-btn primary">
+         <a href="/quotation" className="ctas-btn primary">
             Request a Quotation →
-          </button>
+          </a>
 
-          <button className="ctas-btn secondary">
+          <a href="/contact" className="ctas-btn secondary">
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
     </section>
 
-      
+      <Footer />
     </div>
   );
 };

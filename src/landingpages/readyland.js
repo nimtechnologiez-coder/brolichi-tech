@@ -13,16 +13,17 @@ const CTASection = () => {
         </p>
 
         <div className="cta-buttons">
-          <button className="cta-btn primary">
+          <a href="/quotation" className="cta-btn primary">
             Request a Quotation →
-          </button>
+          </a>
 
-          <button className="cta-btn secondary">
+          <a href="/contact" className="cta-btn secondary">
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
     </section>
+    
   );
 };
 

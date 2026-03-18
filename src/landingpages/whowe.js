@@ -32,9 +32,9 @@ const WhoWe = () => {
             residential, commercial, and industrial projects.
           </p>
 
-          <button className="whowe-btn">
+          <a href="/about" className="whowe-btn">
             Learn more about us →
-          </button>
+          </a>
         </div>
 
         {/* RIGHT */}

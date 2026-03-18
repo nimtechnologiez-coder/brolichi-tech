@@ -8,6 +8,8 @@ import WhyChoose from './landingpages/whychoose';
 import Testimonials from './landingpages/testimonial';
 import CTASection from './landingpages/readyland';
 import LandingHero from './landingpages/landinghero';
+import Contact from './contact/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -26,10 +28,12 @@ function App() {
               <WhyChoose />
               <Testimonials />
               <CTASection />
+              <Footer/>
             </>
           }
         />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>

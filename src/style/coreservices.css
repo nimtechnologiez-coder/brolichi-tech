@@ -94,13 +94,14 @@
   color: #ff7a00;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .cs-view-more {
   margin-top: 40px;
 }
 
-.cs-view-more button {
+.cs-view-more-btn {
   background: #0f172a;
   color: white;
   border: none;
@@ -109,6 +110,15 @@
   cursor: pointer;
   font-weight: 600;
   font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.cs-view-more-btn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 1200px) {

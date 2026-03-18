@@ -1,10 +1,10 @@
 import React from "react";
 import "../style/coreservices.css";
 
-import s1 from "../images/img1.png";
-import s2 from "../images/img2.png";
-import s3 from "../images/img3.png";
-import s4 from "../images/img4.png";
+import s1 from "../images/s1.png";
+import s2 from "../images/s2.png";
+import s3 from "../images/s3.png";
+import s4 from "../images/s4.png";
 import iconImg from "../images/packageicon.png";
 
 const servicesData = [
@@ -43,14 +43,14 @@ const Coreservices = () => {
                 for residential, commercial, and industrial projects.
               </p>
 
-              <span className="cs-learn">Learn more →</span>
+              <a href="/services" className="cs-learn">Learn more →</a>
             </div>
           </div>
         ))}
       </div>
 
       <div className="cs-view-more">
-        <button>View more →</button>
+        <a href="/services" className="cs-view-more-btn">View more →</a>
       </div>
     </section>
   );

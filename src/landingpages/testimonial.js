@@ -53,7 +53,7 @@ const Testimonials = () => {
 
       {/* BUTTON */}
       <div className="btn-wrap">
-        <button>Read all Testimonials →</button>
+        <a href="/testimonials" className="btn-testimonial">Read all Testimonials →</a>
       </div>
       
     </section>

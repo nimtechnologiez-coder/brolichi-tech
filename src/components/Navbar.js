@@ -30,7 +30,7 @@ const Navbar = () => {
         <NavLink to="/testimonials" className={({ isActive }) => isActive ? 'active' : ''}>Testimonials</NavLink>
         <NavLink to="/careers" className={({ isActive }) => isActive ? 'active-btn' : 'nav-btn'}>Careers</NavLink>
       </div>
-      <button className="contact-btn desktop-only">Contact us</button>
+      <Link to="/contact" className="contact-btn desktop-only">Contact us</Link>
 
       {/* Mobile Toggle */}
       <button className="mobile-menu-toggle" onClick={toggleMenu}>
@@ -45,7 +45,7 @@ const Navbar = () => {
           <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>About Us</NavLink>
           <NavLink to="/testimonials" className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Testimonials</NavLink>
           <NavLink to="/careers" className={({ isActive }) => isActive ? 'active-btn' : 'nav-btn'} onClick={() => setIsMenuOpen(false)}>Careers</NavLink>
-          <button className="contact-btn mobile-contact-btn">Contact us</button>
+          <Link to="/contact" className="contact-btn mobile-contact-btn" onClick={() => setIsMenuOpen(false)}>Contact us</Link>
         </div>
       </div>
     </nav>

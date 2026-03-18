@@ -41,6 +41,8 @@
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* PRIMARY BUTTON */

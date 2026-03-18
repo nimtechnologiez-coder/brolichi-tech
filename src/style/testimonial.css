@@ -91,7 +91,7 @@
   margin-top: 40px;
 }
 
-.btn-wrap button {
+.btn-testimonial {
   padding: 12px 25px;
   border-radius: 8px;
   font-size: 18px;
@@ -100,6 +100,16 @@
   background: transparent;
   color: #0f172a;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-testimonial:hover {
+  background: #0f172a;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 

@@ -1,34 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../Styleour/services.css";
 import tickIcon from "../images/check-broken.png";
+import bg1 from "../images/signatureFrancine.png";
+import bg2 from "../images/signatureJOHN.png";
+import bg3 from "../images/signaturePHILIMON.png";
+import materials from "../images/material4.png";
+import transport from "../images/materials1.png";
+import vehicle from "../images/materials2.png";
+import customs from "../images/materials3.png";
 const Tick = ({ text }) => (
-  <p
-    className="tick"
-    style={{
-      display: "flex",
-      alignItems: "center",
-      gap: "10px"
-    }}
-  >
-    <img
-      src={tickIcon}
-      alt="tick"
-      style={{
-        width: "18px",
-        height: "18px",
-        objectFit: "contain"
-      }}
-    />
-    {text}
-  </p>
+  <div className="tick">
+    <img src={tickIcon} alt="tick" className="tick-icon" />
+    <p>{text}</p>
+  </div>
 );
 
 const Services = () => {
-  return (
-    <div className="services-container">
+  const images = [bg1, bg2, bg3];
+  const [currentIdx, setCurrentIdx] = useState(0);
 
-      {/* HEADER */}
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className="services-page">
+
+      {/* HEADER CAROUSEL */}
       <div className="header">
+        {images.map((img, idx) => (
+          <div
+            key={idx}
+            className={`header-bg ${idx === currentIdx ? "active" : ""}`}
+            style={{ backgroundImage: `url(${img})` }}
+          />
+        ))}
+      </div>
+
+      {/* HEADER TEXT SECTION */}
+      <div className="header-text-section">
         <div className="header-content">
           <p className="tag">WHAT WE OFFER</p>
           <h1 className="main-title">Our Services</h1>
@@ -45,7 +58,7 @@ const Services = () => {
       {/* CARD 1 */}
       <div className="card card-1">
         <div className="card-img">
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="" />
+          <img src={materials} alt="" />
         </div>
 
         <div className="card-content">
@@ -53,9 +66,9 @@ const Services = () => {
           <h2 className="title">Building Materials Supply</h2>
 
           <p className="desc">
-            We provide a wide range of high-quality construction materials for residential, commercial, and industrial projects. Our materials are sourced from trusted manufacturers to ensure 
+            We provide a wide range of high-quality construction materials for residential, commercial, and industrial projects. Our materials are sourced from trusted manufacturers to ensure
 
-durability, reliability, and consistent supply
+            durability, reliability, and consistent supply
           </p>
 
           <div className="list-row">
@@ -72,23 +85,25 @@ durability, reliability, and consistent supply
             </div>
           </div>
 
-          <button className="btn-dark">Request a Quotation →</button>
+          <a href="/quotation" className="btn-dark">
+            Request a Quotation &nbsp; →
+          </a>
         </div>
       </div>
 
       {/* CARD 2 */}
       <div className="card card-2 reverse">
         <div className="card-img">
-          <img src="https://images.unsplash.com/photo-1506619216599-9d16d0903dfd" alt="" />
+          <img src={transport} alt="" />
         </div>
 
         <div className="card-content">
           <p className="tag">SERVICE RANGE 02</p>
           <h2 className="title">Transport & Logistics Services</h2>
-               <p className="desc">
-            Our transport services ensure safe and timely delivery of construction materials and goods 
-to project sites. With a reliable fleet and experienced drivers, we support both small and 
-large-scale logistics needs.
+          <p className="desc">
+            Our transport services ensure safe and timely delivery of construction materials and goods
+            to project sites. With a reliable fleet and experienced drivers, we support both small and
+            large-scale logistics needs.
           </p>
           <div className="list-row">
             <div>
@@ -104,58 +119,24 @@ large-scale logistics needs.
             </div>
           </div>
 
-          <button className="btn-dark">Book Transport →</button>
+          <a href="/bookings" className="btn-dark">Book Transport &nbsp; →</a>
         </div>
       </div>
 
       {/* CARD 3 */}
       <div className="card card-3">
         <div className="card-img">
-          <img src="https://images.unsplash.com/photo-158" alt="" />
+          <img src={vehicle} alt="Motor Vehicle Importation" />
         </div>
 
         <div className="card-content">
           <p className="tag">SERVICE RANGE 03</p>
-          <h2 className="title">Customs Clearing & Forwarding</h2>
-
-          <p className="desc">
-           We assist individuals and businesses in importing motor vehicles from trusted international 
-suppliers. Our team manages the entire process to ensure a smooth and hassle-free 
-vehicle import experience.
-          </p>
-
-          <div className="list-row">
-            <div>
-              <Tick text="Import & export customs clearance" />
-              <Tick text="Documentation preparation & processing" />
-              <Tick text="Freight forwarding coordination" />
-            </div>
-
-            <div>
-              <Tick text="Port handling & cargo inspection support" />
-              <Tick text="Duty & tax processing assistance" />
-              <Tick text="Efficient cargo release & delivery" />
-            </div>
-          </div>
-
-          <button className="btn-dark">Start Vehicle Import →</button>
-        </div>
-      </div>
-
-      {/* CARD 4 */}
-      <div className="card card-4 reverse">
-        <div className="card-img">
-          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="" />
-        </div>
-
-        <div className="card-content">
-          <p className="tag">SERVICE RANGE 04</p>
           <h2 className="title">Motor Vehicle Importation</h2>
 
           <p className="desc">
-            Our customs clearing and forwarding services simplify international trade by handling 
-documentation, customs procedures, and logistics. We ensure your cargo moves quickly 
-and efficiently through ports and borders.
+            We assist individuals and businesses in importing motor vehicles from trusted international
+            suppliers. Our team manages the entire process to ensure a smooth and hassle-free
+            vehicle import experience.
           </p>
 
           <div className="list-row">
@@ -172,7 +153,41 @@ and efficiently through ports and borders.
             </div>
           </div>
 
-          <button className="btn-dark">Get Clearing Assistance →</button>
+          <a href="/import-vehicle" className="btn-dark">Start Vehicle Import &nbsp; →</a>
+        </div>
+      </div>
+
+      {/* CARD 4 */}
+      <div className="card card-4 reverse">
+        <div className="card-img">
+          <img src={customs} alt="Customs Clearing & Forwarding" />
+        </div>
+
+        <div className="card-content">
+          <p className="tag">SERVICE RANGE 04</p>
+          <h2 className="title">Customs Clearing & Forwarding</h2>
+
+          <p className="desc">
+            Our customs clearing and forwarding services simplify international trade by handling
+            documentation, customs procedures, and logistics. We ensure your cargo moves quickly
+            and efficiently through ports and borders.
+          </p>
+
+          <div className="list-row">
+            <div>
+              <Tick text="Import & export customs clearance" />
+              <Tick text="Documentation preparation & processing" />
+              <Tick text="Freight forwarding coordination" />
+            </div>
+
+            <div>
+              <Tick text="Port handling & cargo inspection support" />
+              <Tick text="Duty & tax processing assistance" />
+              <Tick text="Efficient cargo release & delivery" />
+            </div>
+          </div>
+
+          <a href="/clearing-assistance" className="btn-dark">Get Clearing Assistance &nbsp; →</a>
         </div>
       </div>
 
@@ -182,11 +197,10 @@ and efficiently through ports and borders.
         <p>Contact us today and get a personalised quote.</p>
 
         <div className="cta-buttons">
-          <button className="btn-orange">Request a Quotation →</button>
-          <button className="btn-outline">Contact Us</button>
+          <a href="/quotation" className="btn-orange">Request a Quotation &nbsp; →</a>
+          <a href="/contact" className="btn-outline">Contact Us</a>
         </div>
       </div>
-
     </div>
   );
 };

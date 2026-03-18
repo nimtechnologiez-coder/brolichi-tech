@@ -6,26 +6,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Services from "./Ourservices/Services";
 import AboutUs from "./Ourservices/AboutUs";
 
-// Footer
-import Footer from "./Ourservices/Footer";
+import Testimonials from "./Ourservices/Testimonials";
 
 function App() {
   return (
     <Router>
+    
 
       {/* ROUTES */}
       <Routes>
         <Route path="/" element={<Services />} />
         <Route path="/services" element={<Services />} />
-
-        {/* You can add more pages later */}
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about" element={<AboutUs />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
 
-      {/* FOOTER */}
-      <Footer />
-
+ 
     </Router>
   );
 }

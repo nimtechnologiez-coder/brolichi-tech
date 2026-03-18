@@ -8,6 +8,14 @@ import WhyChoose from './landingpages/whychoose';
 import Testimonials from './landingpages/testimonial';
 import CTASection from './landingpages/readyland';
 import LandingHero from './landingpages/landinghero';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Services from "./Ourservices/Services";
+import AboutUs from "./Ourservices/AboutUs";
+
+import Footer from "./Ourservices/Footer";
 
 function App() {
   return (
@@ -32,6 +40,21 @@ function App() {
           <Route path="/careers" element={<Careers />} />
         </Routes>
       </div>
+
+
+      {/* ROUTES */}
+      <Routes>
+        <Route path="/" element={<Services />} />
+        <Route path="/services" element={<Services />} />
+
+        {/* You can add more pages later */}
+        <Route path="/about" element={<AboutUs />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+
+      {/* FOOTER */}
+      <Footer />
+
     </Router>
   );
 }

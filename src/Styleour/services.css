@@ -13,8 +13,8 @@
 /* HEADER */
 /* ========================= */
 .header {
-  height: 569px;
-  /* Increased for a more prominent hero section */
+  height: 350px;
+  /* Reduced to remove empty gap */
   position: relative;
   overflow: hidden;
   display: flex;
@@ -43,7 +43,7 @@
 }
 
 .header-text-section {
-  padding: 70px 0 20px;
+  padding: 40px 0 20px;
   background: transparent;
 }
 

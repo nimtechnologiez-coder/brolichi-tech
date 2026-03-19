@@ -170,8 +170,8 @@ const AboutPage = () => {
         <h2 className="milestone-title">Key Milestones</h2>
 
         <div className="timeline">
-
           <div className="timeline-line"></div>
+
 
           <div className="timeline-item active">
             <div className="dot"></div>

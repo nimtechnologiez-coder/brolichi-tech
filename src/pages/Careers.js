@@ -14,7 +14,7 @@ import {
   Facebook, 
   Twitter 
 } from 'lucide-react';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 
 const Careers = () => {
   const [expandedJobId, setExpandedJobId] = useState(null);
@@ -191,7 +191,7 @@ const Careers = () => {
       </div>
     </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

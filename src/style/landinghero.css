@@ -38,9 +38,9 @@
   text-align: justify;
   background: rgba(255, 140, 0, 0.1);
   border: 1px solid #ff8c00;
-  padding: 10px 16px;
+  padding: 8px 16px;
   border-radius: 999px;
-
+  margin-bottom: 30px;
   color: #ff8c00;
   font-size: 18px;
 
@@ -50,7 +50,7 @@
 
 /* HEADING */
 .landinghero h1 {
-  font-size: 56px;  /* increased */
+  font-size: 54px;  /* increased */
   font-weight: 700;
   line-height: 1.2;
   text-align: left;
@@ -124,7 +124,7 @@
   position: absolute;
   left: 110%;
   transform: translateX(-50%);
-  margin-top: 25px;
+  margin-top: 35px;
   display: flex;
   align-items: center;
 
@@ -132,7 +132,7 @@
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 10px;
 
-  padding: 2px 40px;
+  padding: 12px 40px;
   width: 100%; /* 🔥 controls exact width like screenshot */
   max-width: 900px;
 
@@ -150,7 +150,7 @@
 .stats div h2 {
   color: #ff8c00;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 6px;
 }
 

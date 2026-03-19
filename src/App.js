@@ -14,8 +14,8 @@ import LandingHero from './landingpages/landinghero';
 import Contact from './contact/Contact';
 import Footer from './components/Footer';
 
-import Services from "./Ourservices/Services";
-import AboutUs from "./Ourservices/AboutUs";
+// import Services from "./Ourservices/Services";
+// import AboutUs from "./Ourservices/AboutUs";
 
 function App() {
   return (
@@ -42,8 +42,8 @@ function App() {
           {/* OTHER ROUTES */}
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<AboutUs />} />
+          {/* <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<AboutUs />} /> */}
         </Routes>
 
         <Footer />

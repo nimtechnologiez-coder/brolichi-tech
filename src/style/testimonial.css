@@ -51,9 +51,9 @@
 .text {
   color: #64748b;
   font-style: italic;
-  margin-bottom: 25px;
+  margin-top: 25px;
   line-height: 1.6;
-    font-size: 20px;
+  font-size: 20px;
 }
 
 /* USER */

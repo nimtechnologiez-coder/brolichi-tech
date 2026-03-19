@@ -2,7 +2,7 @@ import React from 'react';
 import './Contact.css';
 import Navbar from '../components/Navbar';
 import CTASection from '../landingpages/readyland';
-import Footer from '../components/Footer';
+// import Footer from '../components/Footer';
 import logo from '../images/logo.png';
 import { 
   Package,
@@ -102,7 +102,7 @@ const Contact = () => {
 
       <CTASection />
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

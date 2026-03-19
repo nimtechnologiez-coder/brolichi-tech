@@ -15,11 +15,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Services from "./Ourservices/Services";
 import AboutUs from "./Ourservices/AboutUs";
 
+import Testimonials from "./Ourservices/Testimonials";
+
 import Footer from "./Ourservices/Footer";
 
 function App() {
   return (
     <Router>
+    
       <div className="App">
         <Navbar />
         <Routes>
@@ -46,15 +49,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Services />} />
         <Route path="/services" element={<Services />} />
-
-        {/* You can add more pages later */}
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about" element={<AboutUs />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
 
-      {/* FOOTER */}
-      <Footer />
-
+ 
     </Router>
   );
 }

@@ -4,13 +4,47 @@
 .services-container {
   font-family: "Poppins", sans-serif;
   background: #f1f5f9;
+  width: 100%;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* ========================= */
 /* HEADER */
 /* ========================= */
 .header {
-  padding: 80px 0;   /* FIXED (you had invalid code) */
+  height: 569px;
+  /* Increased for a more prominent hero section */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* Ensure full-width */
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  /* Back to cover for full HERO look */
+  background-repeat: no-repeat;
+  background-position: center -3px;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.header-bg.active {
+  opacity: 1;
+}
+
+.header-text-section {
+  padding: 70px 0 20px;
+  background: transparent;
 }
 
 .header-content {
@@ -33,15 +67,17 @@
 .sub-title {
   font-family: "Poppins", sans-serif;
   font-size: 22px;
-  font-weight: 580;   /* 👈 correct weight */
+  font-weight: 580;
+  /* 👈 correct weight */
   color: #1e293b;
   line-height: 1.5;
 }
+
 .desc {
   color: #64748b;
   font-size: 16px;
   line-height: 1.8;
-  margin-bottom: 25px;
+  margin: 0 0 25px 0;
   width: 100%;
 }
 
@@ -50,15 +86,18 @@
 /* ======= */
 .card {
   width: 90%;
-  margin: 30px auto;   /* base spacing */
+  margin: 30px auto;
+
   background: #fff;
   border-radius: 16px;
 
   display: flex;
   flex-direction: row;
   align-items: stretch;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  max-width: 1350px;
+  max-height: 400px;
+  /* Use min-height for responsiveness */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
@@ -68,10 +107,22 @@
 }
 
 /* PER CARD SPACING (optional control) */
-.card-1 { margin-top: 0px; }
-.card-2 { margin-top: 65px; }
-.card-3 { margin-top: 65px; }
-.card-4 { margin-top: 65px; margin-bottom: 60px; }
+.card-1 {
+  margin-top: 0px;
+}
+
+.card-2 {
+  margin-top: 65px;
+}
+
+.card-3 {
+  margin-top: 65px;
+}
+
+.card-4 {
+  margin-top: 65px;
+  margin-bottom: 60px;
+}
 
 /* ========================= */
 /* IMAGE */
@@ -94,12 +145,22 @@
 .card-content {
   width: 60%;
   min-width: 60%;
-  padding: 30px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Vertically center content */
+  gap: 15px;
+  /* Consistent spacing between elements */
 }
 
-.title {
-  font-weight: 700;
-  color: #0f172a;
+.card-content .tag,
+.card-content .title,
+.card-content .desc,
+.card-content .list-row,
+.card-content .btn-dark {
+  margin: 0;
+  /* Remove individual margins to let flex gap handle it */
 }
 
 /* ========================= */
@@ -108,7 +169,12 @@
 .list-row {
   display: flex;
   gap: 40px;
-  margin-top: 15px;
+  width: 100%;
+}
+
+.list-row>div {
+  flex: 1;
+  /* Balanced columns */
 }
 
 .tick {
@@ -116,43 +182,78 @@
   align-items: center;
   gap: 10px;
   margin: 6px 0;
+  font-size: 15px;
+  color: #334155;
 }
 
-.tick svg circle,
-.tick svg path {
-  stroke: #f97316;
-  stroke-width: 2;
+.tick p {
+  margin: 0;
+  /* Remove default paragraph margins */
+  line-height: 1.2;
+  /* Better vertical alignment with icon */
+}
+
+.tick-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 /* ========================= */
 /* BUTTONS */
 /* ========================= */
 .btn-dark {
-  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 25px;
+  /* Consistent margin for the button */
   background: #0f172a;
   color: #fff;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 28px;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.btn-dark:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
 }
 
 .btn-orange {
+  display: inline-block;
+  text-decoration: none;
   background: #f97316;
   color: #fff;
   border: none;
-  padding: 14px 28px;
+  padding: 14px 32px;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
 }
 
 .btn-outline {
+  display: inline-block;
+  text-decoration: none;
   background: transparent;
   color: #fff;
   border: 1px solid #fff;
-  padding: 14px 28px;
+  padding: 14px 32px;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 /* ========================= */
@@ -169,12 +270,14 @@
 .cta h1 {
   font-size: 48px;
   margin-bottom: 15px;
+  font-weight: 650;
 }
 
 .cta p {
   color: #d1d5db;
   margin: 20px auto;
   max-width: 600px;
+
 }
 
 .cta-buttons {
@@ -182,6 +285,12 @@
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+/* Apply font weight to buttons */
+.cta-buttons button {
+  font-weight: 650;
+  /* Semi-bold */
 }
 
 /* ========================= */
@@ -197,12 +306,21 @@
   .card,
   .card.reverse {
     flex-direction: column;
+    height: auto;
+    min-height: auto;
   }
 
-  .card-img,
+  .card-img {
+    width: 100%;
+    min-width: 100%;
+    height: 300px;
+    /* Fixed height for image when stacked */
+  }
+
   .card-content {
     width: 100%;
     min-width: 100%;
+    padding: 30px;
   }
 
   .list-row {
@@ -213,18 +331,57 @@
 
 /* Mobile */
 @media (max-width: 600px) {
-  .main-title {
-    font-size: 32px;
+  .header {
+    display: none;
+    /* Hide entire hero section on mobile as requested */
+  }
+
+  .card {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .cta {
+    padding: 60px 15px;
   }
 
   .cta h1 {
-    font-size: 28px;
+    font-size: 32px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
   }
 
   .btn-dark,
   .btn-orange,
   .btn-outline {
     width: 100%;
+    box-sizing: border-box;
     text-align: center;
+  }
+}
+
+/* Specific Smaller Devices */
+@media (max-width: 400px) {
+  .sub-title {
+    font-size: 16px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .card-content {
+    padding: 15px;
   }
 }

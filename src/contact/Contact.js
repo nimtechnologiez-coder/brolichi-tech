@@ -2,11 +2,11 @@ import React from 'react';
 import './Contact.css';
 import Navbar from '../components/Navbar';
 import CTASection from '../landingpages/readyland';
-// import Footer from '../components/Footer';
 import logo from '../images/logo.png';
 import { 
   Package,
 } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
@@ -102,7 +102,7 @@ const Contact = () => {
 
       <CTASection />
 
-      {/* <Footer /> */}
+      <Footer/>
     </div>
   );
 };

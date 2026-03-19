@@ -1,5 +1,4 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -13,6 +12,8 @@ import CTASection from './landingpages/readyland';
 import LandingHero from './landingpages/landinghero';
 import Contact from './contact/Contact';
 import Footer from './components/Footer';
+
+
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
                 <WhyChoose />
                 <Testimonials />
                 <CTASection />
+                <Footer />
               </>
             }
           />
@@ -42,7 +44,7 @@ function App() {
           
         </Routes>
 
-        <Footer />
+       
       </div>
     </Router>
   );
